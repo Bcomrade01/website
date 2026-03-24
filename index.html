@@ -1,98 +1,56 @@
-
 <!DOCTYPE html>
-<html lang="ha">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darknet001 | Security Research</title>
-    <style>
-        body {
-            background-color: #050505;
-            color: #00ff41;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .terminal {
-            width: 80%;
-            max-width: 600px;
-            background: rgba(0, 0, 0, 0.9);
-            border: 1px solid #00ff41;
-            padding: 20px;
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
-            border-radius: 5px;
-        }
-        .header {
-            border-bottom: 1px solid #00ff41;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        .blink { animation: blinker 1s linear infinite; }
-        @keyframes blinker { 50% { opacity: 0; } }
-        h1 { font-size: 1.5rem; }
-        p { line-height: 1.6; font-size: 1rem; }
-        .footer { margin-top: 30px; font-size: 0.8rem; color: #888; }
-    </style>
-</head>
-<body>
-    <div class="terminal">
-        <div class="header">SYSTEM STATUS: ONLINE</div>
-        <h1>> Welcome to Darknet001</h1>
-        <p>Barka da zuwa shafin bincike na sirri. Wannan shafin yana gudana ne 24/7 daga GitHub Servers.</p>
-        <p>> User: Basiru Salihu</p>
-        <p>> Focus: Penetration Testing & Forensics</p>
-        <p>> Connection: <span style="color: #ffffff;">Secure SSL</span></p>
-        <p>> Waiting for commands<span class="blink">_</span></p>
-        
-        <div class="footer">
-            © 2026 Darknet001. All rights reserved.
-        </div>
-    </div>
-</body>
-</html><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook – log in or sign up</title>
+    <title>Contact Form - Cybersecurity Project</title>
     <style>
-        body { background-color: #f0f2f5; font-family: Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .login-container { width: 400px; text-align: center; }
-        .logo { color: #1877f2; font-size: 50px; font-weight: bold; margin-bottom: 20px; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, .1); }
-        input { width: 92%; padding: 14px; margin-bottom: 12px; border: 1px solid #dddfe2; border-radius: 6px; font-size: 17px; }
-        .login-btn { width: 100%; padding: 14px; background-color: #1877f2; border: none; border-radius: 6px; color: white; font-size: 20px; font-weight: bold; cursor: pointer; }
-        .forgot { color: #1877f2; font-size: 14px; margin-top: 15px; display: block; text-decoration: none; }
+        /* This makes the form look modern and clean */
+        body { font-family: sans-serif; background-color: #f4f4f9; display: flex; justify-content: center; padding: 50px; }
+        .form-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        h2 { color: #333; text-align: center; }
+        .field { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #e51937; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        button:hover { background: #b3122a; }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <div class="logo">facebook</div>
-        <div class="card">
-            <form id="fb-form">
-                <input type="text" placeholder="Email address or phone number" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit" class="login-btn">Log In</button>
-            </form>
-            <a href="#" class="forgot">Forgotten password?</a>
-        </div>
-    </div>
 
-    <script>
-        document.getElementById('fb-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Kare shafin daga yin refreshing
-            
-            // Anan ne yawanci hacker yake saita inda password zai tafi
-            alert("Connection error! Redirecting to secure login...");
-            
-            // Wannan layin zai tura su asalin Facebook
-            window.location.href = "https://www.facebook.com/login.php";
-        });
-    </script>
+<div class="form-card">
+    <h2>Contact Me</h2>
+
+    <form action="https://formspree.io/f/mqeyrjzz" method="POST">
+        
+        <div class="field">
+            <label>Full Name</label>
+            <input type="text" name="visitor_name" placeholder="Basiru Salihu" required>
+        </div>
+
+        <div class="field">
+            <label>Email Address</label>
+            <input type="email" name="visitor_email" placeholder="email@example.com" required>
+        </div>
+
+        <div class="field">
+            <label>Inquiry Type</label>
+            <select name="service_requested">
+                <option value="Penetration Testing">Penetration Testing</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Message</label>
+            <textarea name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+</div>
+
 </body>
 </html>
